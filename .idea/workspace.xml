@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="136bf539-e5f4-4409-b029-8385de508e6c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Hippodrome.java" afterPath="$PROJECT_DIR$/src/Hippodrome.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="136bf539-e5f4-4409-b029-8385de508e6c" name="Default" comment="" />
     <ignored path="Hippodrome.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/out/" />
@@ -381,6 +378,13 @@
       <option name="number" value="Default" />
       <updated>1456605308190</updated>
     </task>
+    <task id="LOCAL-00001" summary="Very small update">
+      <created>1456609829207</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1456609829207</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -424,7 +428,8 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <option name="LAST_COMMIT_MESSAGE" value="" />
+    <MESSAGE value="Very small update" />
+    <option name="LAST_COMMIT_MESSAGE" value="Very small update" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
