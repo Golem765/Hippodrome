@@ -6,6 +6,7 @@ public class Horse
     private String name;
     private double speed;
     private double distance;
+    private int bet;
 
     public Horse(String name, double speed, double distance)
     {
@@ -29,6 +30,11 @@ public class Horse
         return distance;
     }
 
+    public int getBet()
+    {
+        return bet;
+    }
+
     public void setName(String name)
     {
         this.name = name;
@@ -42,6 +48,11 @@ public class Horse
     public void setDistance(double distance)
     {
         this.distance = distance;
+    }
+
+    public void setBet(int bet)
+    {
+        this.bet = bet;
     }
 
     public void move(){

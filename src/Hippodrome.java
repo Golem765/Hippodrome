@@ -1,3 +1,6 @@
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.text.ParseException;
 import java.util.ArrayList;
 
 /**
@@ -11,17 +14,23 @@ public class Hippodrome
     public static Hippodrome game;
     public static void main(String[] args)throws Exception
     {
+
         Hippodrome hip = new Hippodrome();
         game = hip;
-        Horse johny = new Horse("Johny", 3, 0);
-        Horse marko = new Horse("Marko", 3, 0);
-        Horse diablo = new Horse("Diablo", 3, 0);
+        Horse johny = new Horse("Johny", 3.3, 0);
+        Horse marko = new Horse("Marko", 2.7, 0);
+        Horse diablo = new Horse("Diablo", 3.5, 0);
         game.getHorses().add(johny);
         game.getHorses().add(marko);
         game.getHorses().add(diablo);
 
+        Horse bet = game.makeBet();
         game.run();
         game.printWinner();
+        if(bet.getName().equals(game.getWinner().getName()))
+            System.out.println(String.format("Congratulations! Your win is %.2f$", bet.getBet()*6/bet.getSpeed()));
+        else
+            System.out.println("You lost. Better luck next time!");
     }
 
     public ArrayList<Horse> getHorses()
@@ -67,5 +76,51 @@ public class Hippodrome
     public void printWinner()
     {
         System.out.println("Winner is " + getWinner().getName() + "!");
+    }
+
+    public Horse makeBet()throws Exception
+    {
+        Horse ret = null;
+        int bet = 0;
+        try(BufferedReader r = new BufferedReader(new InputStreamReader(System.in)))
+        {
+            System.out.println("Take a sit and make a bet!\n" +
+                    "How much would you like to bet?(Just write a number, no currency signs or other text)");
+            boolean trueInitBet = true;
+            while(trueInitBet)
+            {
+                try
+                {
+                    bet = Integer.parseInt(r.readLine());
+                    trueInitBet = false;
+                }
+                catch(RuntimeException e)
+                {
+                    System.out.println("Wrong input, please, try again.");
+                }
+            }
+            System.out.println("On which horse would you like to bet? There are:");
+            for(Horse h : game.getHorses())
+            {
+                System.out.println(h.getName());
+            }
+            boolean trueInitHorse = true;
+            while(trueInitHorse)
+            {
+                String horseName = r.readLine();
+                for(Horse h : game.getHorses())
+                {
+                    if(horseName.equalsIgnoreCase(h.getName())) {
+                        ret = h;
+                        trueInitHorse = false;
+                        break;
+                    }
+                }
+                if(ret==null)
+                    System.out.println("You entered wrong name, please, try again");
+            }
+            ret.setBet(bet);
+        }
+        return ret;
     }
 }
