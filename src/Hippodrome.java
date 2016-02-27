@@ -1,6 +1,5 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.text.ParseException;
 import java.util.ArrayList;
 
 /**
@@ -15,8 +14,7 @@ public class Hippodrome
     public static void main(String[] args)throws Exception
     {
 
-        Hippodrome hip = new Hippodrome();
-        game = hip;
+        game = new Hippodrome();
         Horse johny = new Horse("Johny", 3.3, 0);
         Horse marko = new Horse("Marko", 2.7, 0);
         Horse diablo = new Horse("Diablo", 3.5, 0);
